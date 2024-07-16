@@ -20,11 +20,13 @@ getTransactions();
 async function getCustomers(searchParameter = "") {
   let data = await fetch("https://omarsamirr.github.io/Transactions/customers.json");
   customers = await data.json();
+  customers = customers["customers"];
   showData(searchParameter);
 }
 async function getTransactions() {
   let data = await fetch("https://omarsamirr.github.io/Transactions/transactions.json");
   transactions = await data.json();
+  transactions = transactions["transactions"];
   getCustomers();
 }
 

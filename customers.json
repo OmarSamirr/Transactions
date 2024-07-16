@@ -1,0 +1,50 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "name": "Ahmed Ali"
+    },
+    {
+      "id": 2,
+      "name": "Aya Elsayed"
+    },
+
+    {
+      "id": 3,
+      "name": "Salma Mohamed"
+    },
+    {
+      "id": 4,
+      "name": "Sarah Reda"
+    },
+    {
+      "id": 5,
+      "name": "Mohamed Sayed"
+    },
+    {
+      "id": 6,
+      "name": "Omar Samir"
+    },
+    {
+      "id": 7,
+      "name": "Mohannad Sami"
+    },
+    {
+      "id": 8,
+      "name": "Ahmed Khaled"
+    },
+    {
+      "id": 9,
+      "name": "Youssef Ibrahim"
+    },
+    {
+      "id": 10,
+      "name": "Abdelrahman El-Zahaby"
+    },
+    {
+      "id": 11,
+      "name": "Mohy El-Deen Hesham"
+    }
+  ]
+  
+}

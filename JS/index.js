@@ -18,12 +18,12 @@ getTransactions();
 
 //API
 async function getCustomers(searchParameter = "") {
-  let data = await fetch("https://omarsamirr.github.io/Transactions/db.json/customers");
+  let data = await fetch("https://omarsamirr.github.io/Transactions/customers.json");
   customers = await data.json();
   showData(searchParameter);
 }
 async function getTransactions() {
-  let data = await fetch("https://omarsamirr.github.io/Transactions/db.json/transactions");
+  let data = await fetch("https://omarsamirr.github.io/Transactions/transactions.json");
   transactions = await data.json();
   getCustomers();
 }

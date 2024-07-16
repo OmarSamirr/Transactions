@@ -4,8 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jobfair Task</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
-<body>
+<body class="bg-body-secondary">
     
+<div class="container my-5 w-100">
+    <h1 class="my-5 text-center">Transaction History Viewer</h1>
+    <div class="form-floating">
+        <input id="search" autocomplete="off" class="form-control form-floating" placeholder="" type="text">
+      <label for="search">Search by Name or Amount</label> 
+    </div>
+    <table class="table table-striped bg-primary my-5 text-center">
+        <thead>
+            
+            <th>Customer Name</th>
+            <th>Total Transaction Amount</th>
+            <th>Show Transactions</th>
+        </thead>
+        <tbody id="tableData">
+            
+        </tbody>
+    </table>
+    <div id="warning" class="text-center d-none">
+        <h2 class="mb-5" >No Data Found...</h2>
+        <div class="w-100"><img class="w-50" src="img/nodata.jpg" alt="no results"></div>
+    </div>
+    <canvas id="canvas" class="my-4 d-none"></canvas>
+    
+    
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script src="./JS/bootstrap.bundle.js"></script>
+<script src="./JS/index.js"></script>
 </body>
 </html>

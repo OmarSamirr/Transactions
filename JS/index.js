@@ -18,13 +18,17 @@ getTransactions();
 
 //API
 async function getCustomers(searchParameter = "") {
-  let data = await fetch("https://omarsamirr.github.io/Transactions/customers.json");
+  let data = await fetch(
+    "https://omarsamirr.github.io/Transactions/customers.json"
+  );
   customers = await data.json();
   customers = customers["customers"];
   showData(searchParameter);
 }
 async function getTransactions() {
-  let data = await fetch("https://omarsamirr.github.io/Transactions/transactions.json");
+  let data = await fetch(
+    "https://omarsamirr.github.io/Transactions/transactions.json"
+  );
   transactions = await data.json();
   transactions = transactions["transactions"];
   getCustomers();
@@ -34,14 +38,18 @@ async function getTransactions() {
 function showData(searchParameter) {
   let container = "";
   customers.forEach((customer) => {
-    if (customer.name.toLowerCase().includes(searchParameter.toLowerCase()))
+    if (
+      customer.name.toLowerCase().includes(searchParameter.toLowerCase()) ||
+      `${getTransactionsTotal(customer.id)}` == searchParameter
+    ) {
       container += `
-        <tr onclick="renderChart(${customer.id})">
-                <td>${customer.name}</td>
-                <td>${getTransactionsTotal(customer.id)}</td>
-                <td><button class="btn btn-outline-primary">Show</button></td>
-            </tr>
-    `;
+          <tr onclick="renderChart(${customer.id})">
+                  <td>${customer.name}</td>
+                  <td>${getTransactionsTotal(customer.id)}</td>
+                  <td><button class="btn btn-outline-primary">Show</button></td>
+              </tr>
+      `;
+    }
   });
   if (container == "") {
     Warning.classList.remove("d-none");
@@ -128,6 +136,3 @@ function renderChart(customerID) {
     },
   });
 }
-
-//fuction to check if number to search in transactions
-// let isNumber = (value) => typeof value === "number";
